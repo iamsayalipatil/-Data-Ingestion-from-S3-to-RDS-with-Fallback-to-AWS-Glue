@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>project3-readme.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="project-3-data-ingestion-from-s3-to-rds-with-fallback-to-aws-glue-using-dockerized-python-application">Project: 3 Data Ingestion from S3 to RDS with Fallback to AWS Glue using Dockerized Python Application</h1>
+<p>This project implements a <strong>Dockerized Python application</strong> that automates data ingestion from <strong>Amazon S3</strong> into an <strong>RDS MySQL-compatible database</strong>, with a <strong>fallback mechanism to AWS Glue</strong> if the RDS upload fails.<br>
+It demonstrates integration of multiple AWS services (S3, RDS, Glue) and containerization using Docker.</p>
+<h2 id="%F0%9F%8E%AF-objectives">🎯 Objectives</h2>
+<ul>
+<li>Read data from an S3 bucket (CSV file).</li>
+<li>Push parsed data into an RDS MySQL-compatible database.</li>
+<li>If RDS ingestion fails, automatically:
+<ul>
+<li>Create a table in AWS Glue Data Catalog.</li>
+<li>Register the dataset location in S3.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="architecture-diagram">Architecture diagram</h2>
+<p><img src="data-ingection.png" alt="Instance"></p>
+<h2 id="aws-components-utilized">AWS Components Utilized</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Service / Tool</strong></th>
+<th><strong>Role in Project</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amazon S3</strong></td>
+<td>Acts as the storage layer, holding the input CSV file (<code>students.csv</code>).</td>
+</tr>
+<tr>
+<td><strong>Amazon RDS</strong></td>
+<td>Serves as the primary relational database (MySQL-compatible) where ingested records go.</td>
+</tr>
+<tr>
+<td><strong>AWS Glue</strong></td>
+<td>Provides a backup option by cataloging the dataset in case RDS ingestion fails.</td>
+</tr>
+<tr>
+<td><strong>Amazon EC2</strong></td>
+<td>Runs the Dockerized Python application that orchestrates the data pipeline.</td>
+</tr>
+<tr>
+<td><strong>AWS IAM</strong></td>
+<td>Ensures secure access control and permissions across S3, RDS, and Glue operations.</td>
+</tr>
+<tr>
+<td><strong>Docker</strong></td>
+<td>Containerizes the Python script, making deployment portable and consistent.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="implementation-of-project">Implementation of Project</h2>
+<h3 id="1-iam-user-setup">1. IAM User Setup</h3>
+<p>An IAM user was created with programmatic access.
+This user was granted the necessary permissions to securely interact with:</p>
+<ul>
+<li>
+<p>Amazon S3 → to read the source CSV file.</p>
+</li>
+<li>
+<p>Amazon RDS → to insert parsed records into the MySQL-compatible database.</p>
+</li>
+<li>
+<p>AWS Glue → to create tables in the Glue Data Catalog and register the dataset location in S3 when fallback is triggered.</p>
+</li>
+</ul>
+<p><img src="iam.png" alt="Instance"></p>
+<h3 id="2%EF%B8%8F-infrastructure-setup">2️. Infrastructure Setup</h3>
+<ul>
+<li>EC2 Instance:</li>
+</ul>
+<p>EC2 instance(data-project3) is the backbone of your infrastructure — it runs the Dockerized Python application that orchestrates the entire data ingestion workflow from S3 → RDS → Glue fallback.</p>
+<p><img src="screenshots/Screenshot 2026-03-23 175753.png" alt="Instance"></p>
+<ul>
+<li>RDS Database</li>
+</ul>
+<p>RDS database(my-rds-db) is the central storage layer in your pipeline. The Dockerized Python application first attempts to push ingested data here, and only if this fails does the workflow fall back to AWS Glue for cataloging.</p>
+<p><img src="my-rds-db.png" alt="Instance"></p>
+<h2 id="s3-bucket--csv-upload">S3 Bucket &amp; CSV Upload</h2>
+<p>Amazon S3 is used as the primary data storage layer. A CSV file is uploaded to an S3 bucket, which serves as the input source for the data ingestion pipeline.</p>
+<p>🔹 Bucket Creation</p>
+<p>A new S3 bucket was created with the following configuration:</p>
+<pre><code> Bucket Name: my-data-bucket-project3
+ Region: us-east-1
+ Block Public Access: Enabled (for security)
+ Upload Status: Succeeded
+</code></pre>
+<p><img src="screenshots/Screenshot 2026-03-23 010720.png" alt="Instance"></p>
+<ul>
+<li>CSV File Upload</li>
+</ul>
+<p>A sample dataset was prepared in CSV format and uploaded to the S3 bucket.</p>
+<p>📄 Sample File: sample.csv</p>
+<pre><code>     id,name,age
+     1,John,25
+     2,Alice,30
+     3,Bob,28
+</code></pre>
+<p><img src="sample.csv.png" alt="Instance"></p>     
+<h2 id="mysql-database--table-setup">MySQL Database &amp; Table Setup</h2>
+<p>The Amazon RDS instance was accessed from the EC2 machine using the MySQL command-line tool. After connecting successfully, a new database and table were created to store the student data.</p>
+<pre><code>     CREATE DATABASE testdb;
+     USE mydb;
+
+     CREATE TABLE employees (
+       id   INT,
+       name VARCHAR(50)
+     );
+</code></pre>
+<p><img src="employ.1.png" alt="Instance"></p>   
+<h2 id="python-application--dockerfile">Python Application &amp; Dockerfile</h2>
+<p>Python Script (read_s3.py)</p>
+<p>⚙️ Script Workflow</p>
+<p>The Python script carries out the following operations:</p>
+<ol>
+<li>Retrieves the students.csv file from the Amazon S3 bucket using the boto3 library</li>
+<li>Processes and structures the data using the pandas library</li>
+<li>Tries to insert the processed data into the Amazon RDS MySQL database using SQLAlchemy and PyMySQL</li>
+<li>If the database insertion fails, the script switches to a fallback mechanism by creating a table in the AWS Glue Data Catalog and linking it to the dataset stored in S3</li>
+</ol>
+<p>Dockerfile</p>
+<pre><code> # Use Python base image
+FROM python:3.9
+
+# Set working directory
+WORKDIR /app
+
+# Copy file
+COPY read_s3.py .
+
+# Install libraries
+RUN pip install boto3 pandas sqlalchemy pymysql
+
+# Run script
+CMD [&quot;python&quot;, &quot;read_s3.py&quot;]
+</code></pre>
+<p>Requirements File</p>
+<ul>
+<li>
+<p><code>requirements.txt</code> includes:</p>
+<pre><code>  boto3  
+  pandas  
+  sqlalchemy  
+  pymysql  
+</code></pre>
+</li>
+</ul>
+<h2 id="docker-image-build">Docker Image Build</h2>
+<p>The Docker image for this project was successfully created on the EC2 instance using the defined Dockerfile. This process packages the Python application along with all required dependencies into a containerized environment.</p>
+<pre><code>       docker build -t s3-rds-glue-app .
+</code></pre>
+<p><img src="built.png" alt="Instance"></p>  
+<p><img src="docker images.png" alt="Instance"></p>  
+<h2 id="container-run--data-ingestion">Container Run &amp; Data Ingestion</h2>
+<p>The Docker container was started using a .env file that contains AWS credentials and configuration details. This helped the application connect to AWS services and process the data.</p>
+ <p><img src="update.png" alt="Instance"></p>  
+<h2 id="data-validation-in-rds">Data Validation in RDS</h2>
+<p>After running the container, the inserted data was checked in the Amazon RDS MySQL database by executing a SELECT query to confirm that the records were successfully stored.</p>
+<pre><code>      USE testdb;
+      SELECT * FROM employees;
+</code></pre>
+ <p><img src="table.png" alt="Instance"></p>  
+<p><img src="table in glue.png" alt="Instance"></p>  
+<h2 id="configuration-parameters">Configuration Parameters</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Value / Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S3 Bucket Name</strong></td>
+<td><code>my-data-bucket-project3</code> – stores the source CSV file</td>
+</tr>
+<tr>
+<td><strong>CSV File Key</strong></td>
+<td><code>sample.csv</code> – the dataset to be ingested</td>
+</tr>
+<tr>
+<td><strong>RDS Endpoint</strong></td>
+<td><code>my-rds-db.coxmeum0047d.us-east-1.rds.amazonaws.com</code> – connection endpoint for RDS</td>
+</tr>
+<tr>
+<td><strong>RDS Username</strong></td>
+<td><code>admin</code> – database user for authentication</td>
+</tr>
+<tr>
+<td><strong>RDS DB Name</strong></td>
+<td><code>admin123</code> – target database where records are inserted</td>
+</tr>
+<tr>
+<td><strong>RDS Table Name</strong></td>
+<td><code>employees</code> – table schema for storing ingested CSV records</td>
+</tr>
+<tr>
+<td><strong>Glue DB Name</strong></td>
+<td>Configured as fallback target – used when RDS ingestion fails</td>
+</tr>
+<tr>
+<td><strong>AWS Region</strong></td>
+<td><code>us-east-1</code> – region where S3, RDS, and Glue resources are deployed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="challenges-and-solution">Challenges and Solution</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Challenge</strong></th>
+<th><strong>Fix / Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RDS Connection Errors</strong> – The Python app couldn’t connect to the RDS instance because of security group restrictions.</td>
+<td>Updated the RDS security group to allow inbound MySQL traffic (port 3306) from the EC2 host running the Docker container.</td>
+</tr>
+<tr>
+<td><strong>IAM Permissions</strong> – The application initially lacked permissions to access S3 and Glue.</td>
+<td>Created an IAM user (<code>s3-rds-glue-user</code>) with programmatic access and attached policies for S3 read, RDS write, and Glue catalog operations.</td>
+</tr>
+<tr>
+<td><strong>Fallback Handling</strong> – When RDS ingestion failed, the app didn’t properly switch to Glue.</td>
+<td>Added error handling in the Python script to catch database exceptions and trigger Glue Data Catalog creation with the S3 path.</td>
+</tr>
+<tr>
+<td><strong>Docker Dependency Issues</strong> – Missing libraries caused the container to fail at runtime.</td>
+<td>Defined all dependencies (<code>boto3</code>, <code>pandas</code>, <code>sqlalchemy</code>, <code>pymysql</code>) in <code>requirements.txt</code> and rebuilt the Docker image.</td>
+</tr>
+<tr>
+<td><strong>Data Validation</strong> – CSV parsing errors occurred with inconsistent data formats.</td>
+<td>Used pandas to clean and validate the CSV before attempting insertion into RDS.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion">Conclusion</h2>
+<p>This project successfully showcased the design and implementation of a cloud‑native data ingestion pipeline using AWS services and Docker.</p>
+<ul>
+<li>
+<p>A Python application running inside a Docker container on EC2 was able to read a CSV file from Amazon S3, process it with pandas, and insert the records into an Amazon RDS MySQL database using SQLAlchemy and PyMySQL.</p>
+</li>
+<li>
+<p>The pipeline was made resilient with an automatic fallback to AWS Glue, ensuring that if RDS ingestion failed, the dataset was still registered in the Glue Data Catalog with its S3 location preserved.</p>
+</li>
+<li>
+<p>The containerization with Docker made the application portable, reproducible, and easy to deploy on any EC2 instance.</p>
+</li>
+<li>
+<p>All test records from students.csv were successfully ingested into RDS and verified via SQL queries, demonstrating end‑to‑end functionality.</p>
+</li>
+</ul>
+<p>Overall, this hands‑on project provided practical experience in:</p>
+<ul>
+<li>
+<p>Data pipeline engineering</p>
+</li>
+<li>
+<p>Integration of multiple AWS services (S3, RDS, Glue, IAM, EC2)</p>
+</li>
+<li>
+<p>Containerized deployment with Docker</p>
+</li>
+</ul>
+<p>It highlights how cloud services and containerization can be combined to build robust, scalable, and fault‑tolerant data workflows.</p>
+<h2 id="%F0%9F%91%A4-about-the-author">👤 About the Author</h2>
+<p>Hi, I'm <strong>Sayali Patil</strong> — a passionate Cloud &amp; DevOps Learner ☁️</p>
+<p>📧 Email: rajputsayali1104@gmail.com<br>
+🔗 LinkedIn: <a href="https://linkedin.com/in/sayali-patil-599464362">linkedin.com/in/Sayali-Patil-599464362</a><br>
+🐱‍💻 GitHub: <a href="https://github.com/iamsayalipatil">github.com/iamsayalipatil</a><br>
+✍️ Medium: <a href="https://medium.com/@SayaliPatil1104">medium.com/@SayaliPatil1104</a></p>
+
+</body>
+</html>
